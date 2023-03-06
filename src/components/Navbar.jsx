@@ -7,6 +7,8 @@ import { logo, menu, close } from "../assets";
 const Navbar = () => {
   const [active, setActive] = useState("");
 
+  const [toggle, setToggle] = useState(false);
+
   return (
     <nav className="paddingX w-full flex items-center py-5 fixed top-0 z-20 bg-primary">
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -19,14 +21,65 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="Logo" className="w-[10%] object-contain" />
+
           <p className="text-white text-[26px]  font-normal cursor-pointer">
             Abhiram{" "}
             <span className="hidden sm:block text-[34px] font-semibold ">
-              {" "}
               Krishna M.
             </span>
           </p>
         </Link>
+
+        <ul className="list-none hidden sm:flex gap-10">
+          {navLinks.map((link) => (
+            <li
+              key={link.id}
+              className={`${
+                active === link.title ? "text-white" : " text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => {
+                setActive(link.title);
+              }}
+            >
+              <a href={`#${link.id}`}>{link.title}</a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile hamburger */}
+        <div className="sm:hidden flex justify-end items-center">
+          <img
+            src={toggle ? close : menu}
+            alt="menu"
+            className="min-w-[28px] min-h-[28px] object-contain cursor-pointer"
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+          />
+
+          <div
+            className={`${
+              !toggle ? "hidden" : "flex"
+            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+          >
+            <ul className="list-none flex flex-col justify-end items-start  gap-4">
+              {navLinks.map((link) => (
+                <li
+                  key={link.id}
+                  className={`${
+                    active === link.title ? "text-white" : " text-secondary"
+                  } hover:text-white text-[18px] font-medium cursor-pointer`}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    setActive(link.title);
+                  }}
+                >
+                  <a href={`#${link.id}`}>{link.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );
