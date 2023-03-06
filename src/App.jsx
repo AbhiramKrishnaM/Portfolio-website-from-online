@@ -17,7 +17,10 @@ function App() {
     <BrowserRouter>
       <div className="bg-primary relative z-0">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+          {/* Navbar */}
           <Navbar />
+
+          {/* Hero */}
           <Hero />
         </div>
 
@@ -37,7 +40,10 @@ function App() {
         <Feedbacks />
 
         <div className="relative z-0">
+          {/* Contact */}
           <Contact />
+
+          {/* StarCanvas */}
           <StarsCanvas />
         </div>
       </div>
