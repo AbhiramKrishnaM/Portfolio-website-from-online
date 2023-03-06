@@ -20,11 +20,11 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="Logo" className="w-[10%] object-contain" />
+          <img src={logo} alt="Logo" className="w-[5%] object-contain" />
 
-          <p className="text-white text-[26px]  font-normal cursor-pointer">
+          <p className="text-white text-[18px]  font-normal cursor-pointer">
             Abhiram{" "}
-            <span className="hidden sm:block text-[34px] font-semibold ">
+            <span className="hidden sm:block text-[20px] font-semibold ">
               Krishna M.
             </span>
           </p>
