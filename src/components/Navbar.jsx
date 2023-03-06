@@ -51,7 +51,7 @@ const Navbar = () => {
           <img
             src={toggle ? close : menu}
             alt="menu"
-            className="min-w-[28px] min-h-[28px] object-contain cursor-pointer"
+            className="min-w-[24px] min-h-[24px] object-contain cursor-pointer"
             onClick={() => {
               setToggle(!toggle);
             }}
