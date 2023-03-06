@@ -1,5 +1,5 @@
 function App() {
-  return <div>3D developer Portfolio</div>;
+  return <div className="">3D developer Portfolio</div>;
 }
 
 export default App;
